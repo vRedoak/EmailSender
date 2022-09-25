@@ -12,7 +12,7 @@ namespace EmailSender.Helpers
             var config = ConfigurationManager.AppSettings;
 
             var fromAddress = new MailAddress(config["Email"], config["SenderName"]);
-            var toAddress = new MailAddress("vikaclientuser@gmail.com", emailModel.FirstName + emailModel.LastName);
+            var toAddress = new MailAddress(emailModel.Email, emailModel.FirstName + emailModel.LastName);
             var fromPassword = config["Password"];
 
             const string subject = "Pollen info";
